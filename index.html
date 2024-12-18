@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>windscode</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica', sans-serif; 
+    }
+
+
+    body {
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #000;
+      border-radius: 15px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      color: #aaa;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .icons a {
+      color: #fff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .icons a:hover {
+      color: #00d9ff;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .buttons a {
+      display: block;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .buttons a:hover {
+      background-color: #00d9ff;
+      transform: scale(1.05);
+    }
+
+    .buttons a img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    /* Notification */
+    #notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #00d9ff;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 5px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      display: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.ibb.co.com/tP2mMT9/a93575b4-0400-44c6-9149-4a41fa15a74c.webp" alt="Profile Image" class="profile-img">
+
+    <h1>windscode</h1>
+    <p>Let's connect with me!</p>
+
+    <div class="icons">
+      <a href="mailto:windssuli@email.com" title="Email">📧</a>
+    </div>
+
+    <div class="buttons">
+      <a href="https://linkedin.com/in/windys" onclick="showNotification('Redirecting to LinkedIn!')">
+        <img src="https://www.cdnlogo.com/logos/l/78/linkedin-icon.svg" alt="LinkedIn"> LinkedIn
+      </a>
+      <a href="https://github.com/winndss/" onclick="showNotification('Opening Github Repository!')">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="Github"> Github
+      </a>
+    </div>
+  </div>
+
+  <div id="notification"></div>
+
+  <script>
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.style.display = 'block';
+
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
